@@ -1,0 +1,4 @@
+export type Requirement={id?:string;category:'skill'|'experience'|'education'|'certification'|'other';requirement:string;importance:'required'|'preferred';weight:number;minimum_years?:number|null};
+export type Job={id:string;title:string;department?:string;location?:string;employment_type?:string;job_description:string;status:string;createdAt?:string;created_at?:string;requirements?:Requirement[]};
+export type Match={skills_score:number;experience_score:number;education_score:number;weighted_score:number;coordinate_score:number;final_score:number;ml_relevance_score?:number;ranking_score?:number;coordinate:{x:number;y:number;z:number;ideal:number[]};explanation:any};
+export type Candidate={id:string;job_id?:string;candidate_code:string;profile:any;pii?:any;status:'new'|'shortlisted'|'rejected';match?:Match|null};

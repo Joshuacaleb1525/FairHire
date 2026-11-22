@@ -1,0 +1,3 @@
+const base=import.meta.env.VITE_API_URL||'http://localhost:4000/api';
+export async function api(path:string,options:RequestInit={}){try{const headers:any={...(options.body instanceof FormData?{}:{'Content-Type':'application/json'}),...(options.headers||{})};const r=await fetch(base+path,{...options,headers});const body=await r.json().catch(()=>({}));if(!r.ok)throw new Error(body.error||`Request failed (${r.status})`);return body}catch(e:any){if(e?.message==='Failed to fetch')throw new Error('Cannot reach the FAIRHIRE backend. Make sure npm run dev is still running.');throw e}}
+export const apiBase=base;

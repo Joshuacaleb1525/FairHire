@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:#10213b;
+  background:#edf6ff;
+  font-synthesis:none;
+  text-rendering:optimizeLegibility;
+}
+
+html{background:#edf6ff}
+body{
+  margin:0;
+  min-width:320px;
+  min-height:100vh;
+  color:#10213b;
+  background:
+    radial-gradient(circle at 8% 3%,rgba(255,255,255,.98) 0 10%,transparent 26%),
+    radial-gradient(circle at 88% 12%,rgba(111,176,255,.24) 0 16%,transparent 35%),
+    linear-gradient(135deg,#f8fcff 0%,#eef7ff 34%,#e9f4ff 68%,#f8fbff 100%);
+}
+*{box-sizing:border-box}
+button,a,select,input,textarea{transition:all .2s ease}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #4a8fe7;outline-offset:2px}
+::selection{background:#cfe5ff;color:#0e3567}
+
+/* Atmospheric background inspired by the supplied translucent blue workbook reference. */
+.fh-shell{position:relative;isolation:isolate;overflow-x:hidden}
+.fh-shell::before,.fh-shell::after{content:"";position:fixed;z-index:-2;pointer-events:none;filter:saturate(110%)}
+.fh-shell::before{
+  width:520px;height:760px;right:-145px;top:85px;border-radius:48% 52% 58% 42% / 40% 58% 42% 60%;
+  background:linear-gradient(155deg,rgba(76,125,245,.60),rgba(106,188,255,.16));
+  transform:rotate(-16deg);
+  box-shadow:0 40px 100px rgba(59,130,246,.14);
+}
+.fh-shell::after{
+  width:570px;height:400px;right:75px;top:245px;border-radius:56% 44% 48% 52% / 52% 38% 62% 48%;
+  background:linear-gradient(130deg,rgba(87,214,255,.22),rgba(96,145,255,.25));
+  border:1px solid rgba(255,255,255,.55);
+  transform:rotate(8deg);
+  backdrop-filter:blur(2px);
+}
+.fh-orb{position:fixed;z-index:-1;pointer-events:none;border-radius:999px;border:1px solid rgba(255,255,255,.75);background:rgba(255,255,255,.28);backdrop-filter:blur(8px)}
+.fh-orb-a{width:240px;height:240px;left:-100px;top:70px}
+.fh-orb-b{width:170px;height:170px;right:18%;bottom:-70px;background:rgba(115,201,255,.12)}
+
+.fh-main{position:relative}
+.fh-main::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;background:linear-gradient(180deg,rgba(255,255,255,.18),transparent 38%)}
+
+.soft-grid{background-image:radial-gradient(rgba(115,159,213,.25) 1px,transparent 1px);background-size:20px 20px}
+
+.glass-panel{
+  background:linear-gradient(145deg,rgba(255,255,255,.92),rgba(255,255,255,.73));
+  border:1px solid rgba(195,216,239,.78);
+  box-shadow:0 18px 50px rgba(50,95,145,.08),inset 0 1px 0 rgba(255,255,255,.95);
+  backdrop-filter:blur(18px);
+}
+
+.fh-kicker{font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#5b84b8}
+.fh-title{letter-spacing:-.035em;color:#0a2548}
+.fh-muted{color:#6d84a2}
+.fh-divider{border-color:rgba(190,213,238,.72)}
+
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:#bfd5ec;border-radius:999px;border:2px solid transparent;background-clip:padding-box}
+::-webkit-scrollbar-track{background:transparent}

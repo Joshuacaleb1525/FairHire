@@ -1,0 +1,20 @@
+FAIRHIRE AI v7.2 — Anonymous Screening Privacy Change
+
+Removed from candidate screening UI:
+- Original Identity panel
+- Reveal / eye icon
+- Name, email, phone, location display
+- Source document filename
+- Direct Resume button
+- Resume filename under candidate code and dashboard rows
+
+Backend screening responses now omit:
+- pii
+- extracted_text
+- resume_path
+- original_filename
+- original_mime
+
+The original uploaded resume is still retained internally in backend/uploads for administrative use, but the screening API endpoint for direct resume viewing returns HTTP 403.
+
+Double-Judge behavior and deterministic Skills / Experience / Education / 3D / Final Score logic are unchanged.
